@@ -11,6 +11,9 @@ function stores(app){
     //     console.log(data);
     // });
 
+    app.get('/',(req,res)=>{
+        res.redirect('/stores');
+    })
 
     app.get('/stores', (req,res)=>{
         Store.find().then((stores)=>{
@@ -51,12 +54,37 @@ function stores(app){
     })
     //
     app.put('/stores/:storeId', (req,res)=>{
+        console.log(req.body);
         Store.findByIdAndUpdate(req.params.storeId, req.body).then((store)=>{
             console.log(store);
             res.redirect(`/stores/${store._id}`);
         }).catch((err)=>{
             console.log(err.message);
         })
+    })
+
+    app.patch('/stores/:storeId', (req,res)=>{
+        console.log(`patching `,req.body);
+        if (req.query.add == 'true'){
+            Store.findByIdAndUpdate(req.params.storeId
+                , {$addToSet: {inventory: {$each: req.body.inventory}}}).then((store)=>{
+                console.log(store);
+                res.redirect(`/stores/${store._id}`);
+            }).catch((err)=>{
+                console.log(err.message);
+            })
+        }
+        else{
+            console.log('not add');
+            console.log(req.body);
+            Store.findByIdAndUpdate(req.params.storeId
+                , {$pull: {inventory: req.body.inventory}}).then((store)=>{
+                console.log(store);
+                res.redirect(`/stores/${store._id}`);
+            }).catch((err)=>{
+                console.log(err.message);
+            })
+        }
     })
     //
     app.delete('/stores/:storeId', (req,res)=>{

@@ -1,6 +1,17 @@
-<div class="store">
-    <p>{{store.owner}}</p>
+<h1 class="store-owner">{{store.owner}}</h1>
+<div class="store-detail">
     {{#each store.inventory}}
-        <p>{{this}}</p>
+        <form action="/stores/{{../store._id}}?_method=PATCH&add=false" method="post">
+            <input type="hidden" name="inventory" value="{{this}}" />
+            <button class="" id="deleteItem-{{../store._id}}" data-store-id="{{storeId}}">X</button>
+            {{this}}
+        </form>
     {{/each}}
+    <form class="get-item" action="/items" method="get">
+        <div class="">
+            <input class="" type="hidden" name="storesId" value="{{store._id}}">
+            <button class="" type="submit" name="button">+</button>
+            <p>Click to add new items</p>
+        </div>
+    </form>
 </div>
