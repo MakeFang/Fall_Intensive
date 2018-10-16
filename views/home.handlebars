@@ -1,0 +1,28 @@
+<!-- <form action="/" class="input-group" method="get">
+    <div class="input-group">
+        <input class="form-control" id="search-term" type="text" name="search-term">
+        <span class="input-group-btn">
+            <button class="btn btn-primary" type="submit">Search</button>
+        </span>
+    </div>
+</form> -->
+<ul class="list-unstyled">
+    {{#each stores}}
+    <ul class="list-unstyled">
+        <li class="media my-4">
+            <!-- <img class="mr-3" src="https://via.placeholder.com/64x64" alt="Generic placeholder image"> -->
+            <div class="media-body">
+                <a href="/stores/{{this._id}}"><h5 class="mt-0 mb-1">{{this.owner}}'s Store</h5></a>
+                <div class="my-auto">
+                <!-- <form class="" action="/donations/new" method="get">
+                    <input type="hidden" value="{{this.ein}}" name="orgsEin">
+                    <input type="hidden" value="{{this.charityName}}" name="orgsName">
+                    <a href="/donations/new" class="btn btn-primary">Donate</a>
+                    <button type="submit" class="btn btn-primary">DONATE</button>
+                </form> -->
+                </div>
+            </div>
+        </li>
+    </ul>
+    {{/each}}
+</ul>
