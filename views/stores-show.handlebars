@@ -15,3 +15,7 @@
         </div>
     </form>
 </div>
+<a href="/stores/{{store._id}}/edit">EDIT</a>
+<form class="store-close" action="/stores/{{store._id}}?_method=DELETE" method="post">
+<button class="close-button" type="submit" name="delete">CLOSE STORE</button>
+</form>
