@@ -10,9 +10,9 @@ const items = require('./controllers/items.js');
 
 const app = express();
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/influencer-store', { useNewUrlParser: true });
+// mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/influencer-store', { useNewUrlParser: true });
 
-// mongoose.connect(process.env.MONGODB_URI || 'mongodb://mongo:27017/influencer-store', { useNewUrlParser: true });
+mongoose.connect('mongodb+srv://kfa408:hLfvHlVmwuqObjF2@fang-cluster-1-swfeh.mongodb.net/influencer-store?retryWrites=true' || 'mongodb://localhost/influencer-store', { useNewUrlParser: true });
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
