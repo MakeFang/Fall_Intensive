@@ -12,7 +12,8 @@ function stores(app){
     // });
 
     app.get('/',(req,res)=>{
-        res.redirect('/stores');
+        res.send('deployed');
+        // res.redirect('/stores');
     })
 
     app.get('/stores', (req,res)=>{
