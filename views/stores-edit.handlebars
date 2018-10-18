@@ -1,6 +1,7 @@
-<form class="" action="/stores/{{store._id}}?_method=PUT" method="post">
-    {{>stores-form}}
-    <div class="">
-        <button class="" type="submit" name="button">Create</button>
-    </div>
-</form>
+<div class="row">
+    <form class="col s12" action="/stores/{{store._id}}?_method=PUT" method="post">
+        {{>stores-form}}
+        <button class="btn waves-effect waves-light orange darken-2" type="submit" name="action">Edit
+        </button>
+    </form>
+</div>

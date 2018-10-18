@@ -1,9 +1,16 @@
 <!-- views/partials/stores-form.handlebars -->
 
-<fieldset>
-  <legend>Store</legend>
-  <div class="">
-    <label for="owner-name">Owner</label><br>
-    <input class="" id="owner-name" type="text" name="owner" value="John"/>
-  </div>
-</fieldset>
+<!-- <fieldset> -->
+<div class="row">
+    <div class="input-field col s6">
+        <label for="first-name">Owner</label><br>
+        <input id="owner-name" type="text" name="owner" value="{{store.owner}}"/>
+    </div>
+</div>
+<div class="row">
+    <div class="input-field col s12">
+        <textarea id="textarea2" class="materialize-textarea" data-length="120" name="description"></textarea>
+        <label for="textarea2">Description</label>
+    </div>
+</div>
+<!-- </fieldset> -->

@@ -1,21 +1,58 @@
-<h1 class="store-owner">{{store.owner}}</h1>
-<div class="store-detail">
+
+<!-- <div class="intro orange darken-3 z-depth-1">
+  <div class="white-text large center">
+      {{store.owner}}'s Store
+  </div>
+</div> -->
+
+<h1 class="intro grey-text center">What does {{store.owner}} use?</h1>
+
+<div class="row">
     {{#each store.inventory}}
-        <form action="/stores/{{../store._id}}?_method=PATCH&add=false" method="post">
-            <input type="hidden" name="inventory" value="{{this}}" />
-            <button class="" id="deleteItem-{{../store._id}}" data-store-id="{{storeId}}">X</button>
-            {{this}}
-        </form>
-    {{/each}}
-    <form class="get-item" action="/items" method="get">
-        <div class="">
-            <input class="" type="hidden" name="storesId" value="{{store._id}}">
-            <button class="" type="submit" name="button">+</button>
-            <p>Click to add new items</p>
+    <div class="col s12 m4 l3">
+        <div class="card large">
+            <div class="card-image">
+                <img src="https://via.placeholder.com/200x200">
+                <!-- <a class="btn-floating halfway-fab waves-effect waves-light orange"><i class="material-icons">X</i></a> -->
+            </div>
+            <div class="card-content">
+                <span class="card-title activator">{{this}}<i class="material-icons right">more_vert</i></span>
+                <p>{{this}}</p>
+            </div>
+            <div class="card-action">
+                <a href="#">Purchase</a>
+            </div>
+            <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">
+                    <form class="center-align" action="/stores/{{../store._id}}?_method=PATCH&add=false" method="post">
+                        <input type="hidden" name="inventory" value="{{this}}" />
+                        <button class="btn waves-effect waves-light orange" id="deleteItem-{{../store._id}}" data-store-id="{{storeId}}">REMOVE ITEM</button>
+                        <i class="material-icons right">close</i>
+                    </form>
+
+                </span>
+            </div>
         </div>
+    </div>
+    {{/each}}
+    <div class="col s12 m4 l3">
+        <div class="card large">
+            <div class="card-image">
+                <form class="center-align" action="/items" method="get">
+                    <input class="" type="hidden" name="storesId" value="{{store._id}}">
+                    <button class="btn-floating waves-effect waves-light orange" type="submit" name="button">+</button>
+                </form>
+            </div>
+            <div class="card-content">
+                <span class="card-title">Click + to add new items</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row center-align">
+    <a href="/stores/{{store._id}}/edit">EDIT NAME/DESCRIPTION</a>
+    <form class="center-align" action="/stores/{{store._id}}?_method=DELETE" method="post">
+        <button class="btn waves-effect waves-light orange" type="submit" name="delete">CLOSE LIST</button>
     </form>
 </div>
-<a href="/stores/{{store._id}}/edit">EDIT</a>
-<form class="store-close" action="/stores/{{store._id}}?_method=DELETE" method="post">
-<button class="close-button" type="submit" name="delete">CLOSE STORE</button>
-</form>

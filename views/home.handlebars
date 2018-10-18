@@ -1,4 +1,4 @@
-<h1 class="slogan">WDYU?</h1>
+<!-- <h1 class="slogan">WDYU?</h1>
 <section class="stores">
     <ul class="store-list">
         {{#each stores}}
@@ -8,4 +8,24 @@
         </li>
         {{/each}}
     </ul>
-</section>
+</section> -->
+<h1 class="intro grey-text center">Hey! What ______ do you use?</h1>
+
+<div class="row">
+{{#each stores}}
+  <div class="col s12 m4 l3">
+    <div class="card large">
+      <div class="card-image">
+        <img src="https://via.placeholder.com/200x200">
+        <span class="card-title">{{this.owner}}</span>
+      </div>
+      <div class="card-content">
+        <p>{{this.description}}</p>
+      </div>
+      <div class="card-action center">
+          <a href="/stores/{{this._id}}"><h5 class="">{{this.owner}}'s List</h5></a>
+      </div>
+    </div>
+  </div>
+{{/each}}
+</div>

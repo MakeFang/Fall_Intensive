@@ -3,6 +3,7 @@
 
 Dockerfile
 docker-compose.yml
+data/
 
 ### Node ###
 # Logs

@@ -5,6 +5,7 @@ const ObjectId = Schema.ObjectId;
 const store = new Schema({
     storeId: {type: Schema.Types.ObjectId, ref: 'Store'},
     owner: {type: String, required: true},
+    description: {type: String, required: true},
     inventory: [{type: String}]
 });
 

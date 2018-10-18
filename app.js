@@ -12,6 +12,8 @@ const app = express();
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/influencer-store', { useNewUrlParser: true });
 
+// mongoose.connect(process.env.MONGODB_URI || 'mongodb://mongo:27017/influencer-store', { useNewUrlParser: true });
+
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 app.use(bodyParser.json());

@@ -1,7 +1,13 @@
-<form action="/stores/{{storeId}}?_method=PATCH&add=true" method="post">
-    {{#each items}}
-    <input type="checkbox" name="inventory[]" value="{{this}}" />{{this}}
-    <br>
-    {{/each}}
-    <input type="submit" value="Submit">
-</form>
+<div class="row">
+    <form class="col s12" action="/stores/{{storeId}}?_method=PATCH&add=true" method="post">
+        {{#each items}}
+        <p>
+            <label>
+                <input type="checkbox" name="inventory[]" value="{{this}}" />
+                <span>{{this}}</span>
+            </label>
+        </p>
+        {{/each}}
+        <input type="submit" value="Submit">
+    </form>
+</div>

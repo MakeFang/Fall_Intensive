@@ -5,23 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="/css/style.css" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Stores</title>
 </head>
 <body>
-    <div class="container">
-        <nav class="navbar">
-            <div class="tabs">
-                <button class="tab-button logo"><img class="logopic" src="https://via.placeholder.com/200x60" alt="Logo"/></button>
-                <button class="tab-button"><a href="/stores">Explore</a></button>
-                <button class="tab-button"><a href="/stores/new">Open</a></button>
-                <button class="tab-button"><a href="/stores">Account</a></button>
-            </div>
-        </nav>
-        {{{body}}}
-    </div>
+    <nav class="orange darken-3">
+        <div class="nav-wrapper">
+            <a href="/" class="brand-logo">WDYU</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/stores">Explore</a></li>
+                <li><a href="/stores/new">Open</a></li>
+                <li><a href="#">Account</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    {{{body}}}
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
